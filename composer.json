@@ -1,0 +1,22 @@
+{
+  "name": "kikimarik/lognote",
+  "type": "library",
+  "description": "Composer PSR-11 package for Dependency Injection Container",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4.0",
+    "psr/container": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "kikimarik\\di\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name": "Sergey Sorokin",
+      "email": "kikimarik@inbox.ru",
+      "role": "developer"
+    }
+  ]
+}
