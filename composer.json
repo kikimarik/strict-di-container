@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": ">=8.0",
-        "psr/container": "*"
+        "psr/container": "2.0.2"
     },
     "require-dev": {
         "codeception/codeception": "4.2.0",
