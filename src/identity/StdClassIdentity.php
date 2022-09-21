@@ -16,7 +16,7 @@ final class StdClassIdentity implements ClassIdentity
 
     public function keygen(): string
     {
-        if (!class_exists($this->identity)) {
+        if (!(class_exists($this->identity) || interface_exists($this->identity))) {
             throw new InvalidClassIdentityException("Invalid class {$this->identity}.");
         }
         return $this->identity;

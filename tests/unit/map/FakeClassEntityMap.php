@@ -1,12 +1,12 @@
 <?php
 
-namespace kikimarik\di\map;
+namespace kikimarik\di\tests\unit\map;
 
 use kikimarik\di\core\ClassEntityMap;
 use kikimarik\di\core\ClassIdentity;
 use kikimarik\di\core\DependencyNotFoundException;
 
-final class UniqueClassEntityMap implements ClassEntityMap
+final class FakeClassEntityMap implements ClassEntityMap
 {
     /** @var array<string, object> */
     private array $registry;

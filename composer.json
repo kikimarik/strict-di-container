@@ -1,22 +1,32 @@
 {
-  "name": "kikimarik/lognote",
-  "type": "library",
-  "description": "Composer PSR-11 package for Dependency Injection Container",
-  "license": "MIT",
-  "require": {
-    "php": ">=7.4.0",
-    "psr/container": "*"
-  },
-  "autoload": {
-    "psr-4": {
-      "kikimarik\\di\\": "src"
-    }
-  },
-  "authors": [
-    {
-      "name": "Sergey Sorokin",
-      "email": "kikimarik@inbox.ru",
-      "role": "developer"
-    }
-  ]
+    "name": "kikimarik/strict-di-container",
+    "type": "library",
+    "description": "Composer PSR-11 package for Dependency Injection Container",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0",
+        "psr/container": "*"
+    },
+    "require-dev": {
+        "codeception/codeception": "4.2.0",
+        "codeception/module-asserts": "^1.0.0",
+        "codeception/module-phpbrowser": "^1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "kikimarik\\di\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "kikimarik\\di\\tests\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sergey Sorokin",
+            "email": "kikimarik@inbox.ru",
+            "role": "developer"
+        }
+    ]
 }

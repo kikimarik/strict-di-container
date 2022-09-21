@@ -5,6 +5,8 @@ namespace kikimarik\di\identity;
 use kikimarik\di\core\ClassIdentity;
 use kikimarik\di\core\InvalidClassIdentityException;
 use kikimarik\di\core\RuntimeContainerException;
+use RuntimeException;
+use Throwable;
 
 final class HashClassIdentity implements ClassIdentity
 {
@@ -19,11 +21,15 @@ final class HashClassIdentity implements ClassIdentity
 
     public function keygen(): string
     {
-        if (!class_exists($this->identity)) {
+        if (!(class_exists($this->identity) || interface_exists($this->identity))) {
             throw new InvalidClassIdentityException("Invalid class {$this->identity}.");
         }
-        $hash = hash($this->algo, $this->identity);
-        if ($hash === false) {
+        try {
+            $hash = hash($this->algo, $this->identity);
+            if ($hash === false) {
+                throw new RuntimeException();
+            }
+        } catch (Throwable|\Error $e) {
             throw new RuntimeContainerException("Failed hashing with algo {$this->algo} for {$this->identity}.");
         }
         return $hash;
