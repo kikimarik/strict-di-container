@@ -38,7 +38,7 @@ final class StrictContainer implements ContainerInterface
                 $this->classIdentityFactory->create($id)
             );
             return true;
-        } catch (NotFoundExceptionInterface) {
+        } catch (NotFoundExceptionInterface $e) {
             return false;
         }
     }

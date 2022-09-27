@@ -4,7 +4,7 @@
     "description": "Composer PSR-11 package for Dependency Injection Container",
     "license": "MIT",
     "require": {
-        "php": ">=8.0",
+        "php": ">=7.4",
         "psr/container": "^2.0.2"
     },
     "require-dev": {

@@ -17,9 +17,11 @@ final class FakeClassIdentityFactory implements ClassIdentityFactory
 
     public function create(string $id): ClassIdentity
     {
-        return match ($this->identityType) {
-            FakeClassIdentity::class => new FakeClassIdentity($id),
-            default => throw new RuntimeContainerException("Unexpected identity type {$this->identityType}.")
-        };
+        switch ($this->identityType) {
+            case FakeClassIdentity::class:
+                return new FakeClassIdentity($id);
+            default:
+                throw new RuntimeContainerException("Unexpected identity type {$this->identityType}.");
+        }
     }
 }

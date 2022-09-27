@@ -19,10 +19,13 @@ final class DefaultClassIdentityFactory implements ClassIdentityFactory
 
     public function create(string $id): ClassIdentity
     {
-        return match ($this->identityType) {
-            StdClassIdentity::class => new StdClassIdentity($id),
-            HashClassIdentity::class => new HashClassIdentity($id, $this->options["algo"] ?? "md5"),
-            default => throw new RuntimeContainerException("Unexpected identity type {$this->identityType}.")
-        };
+        switch ($this->identityType) {
+            case StdClassIdentity::class:
+                return new StdClassIdentity($id);
+            case HashClassIdentity::class:
+                return new HashClassIdentity($id, $this->options["algo"] ?? "md5");
+            default:
+                throw new RuntimeContainerException("Unexpected identity type {$this->identityType}.");
+        }
     }
 }

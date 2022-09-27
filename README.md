@@ -2,7 +2,7 @@
 ## Features
 ***
 - Object-oriented design (without static methods etc.)
-- Compatible with PHP 8.0 and later, including PHP 8.1
+- Compatible with PHP 7.4 and later, including PHP 8.1
 - Compatible with PSR-11
 
 ## Why do you need it
